@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="submit" onclick="abc()">
+<input type="button" value="submit">
+<input type="button" value="submit">
+<input type="button" value="submit">
+<input type="button" value="submit">
+
+
+<script>
+    function abc()
+    {
+        alert("welcome to static event");
+    }
+
+var a = document.querySelectorAll('input');
+console.log(a);
+
+a[4].addEventListener("click",abc);
+
+
+a[3].addEventListener("click",function(){
+    alert("welcome to ano function");
+});
+
+
+a[2].addEventListener("click",()=>{
+    alert("welcome to arrow function");
+});
+
+
+
+</script>
+    
+</body>
+</html>

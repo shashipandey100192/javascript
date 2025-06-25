@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            width: 100%;
+            height: 100px;
+            border: 1px solid red;
+            display: flex;
+        }
+
+        .row section {
+            border: 1px solid blue;
+            padding: 5px;
+            flex: 1;
+            margin: 10px;
+        }
+        .box
+        {
+            background-color: red;
+            color:orange;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        .first
+        {
+            border-radius: 50%;
+        }
+        .second
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .theams
+        {
+            background-color: black;
+            color:white;
+        }
+        .theams .row
+        {
+            border:1px solid white;
+            color:white;
+            flex-direction: column;
+        }
+        .theams .row section
+        {
+            border-radius: 10px;
+            border:2px dotted white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <section style="background-color: aqua;">this is box1</section>
+        <section>this is box2</section>
+        <section>this is box3</section>
+        <section>this is box4</section>
+        <section>this is box5</section>
+        <section>this is box6</section>
+        <section>this is box7</section>
+        <section>this is box8</section>
+        <section>this is box9</section>
+        <section>this is box10</section>
+    </div>
+
+
+
+
+    <script>
+        var a = ["red", "green", "blue", "orange", "pink"];
+        var b = 0;
+        var jsection = document.querySelectorAll('section');
+        console.log(jsection);
+
+        jsection[1].addEventListener("click", () => {
+            // jsection[1].style.backgroundColor="red";
+            jsection[1].style.backgroundColor = a[b];
+            b++;
+            if (b > a.length) {
+                b = 0;
+            }
+        });
+
+        jsection[2].addEventListener("click",()=>{
+            // jsection[2].style.color="red";
+            // jsection[2].style.backgroundColor="orange";
+            // jsection[2].style.fontSize="20px";
+            jsection[2].className="box";
+        });
+
+        jsection[3].addEventListener("click",()=>{
+            jsection[3].classList.add("box","first","second");
+        });
+        jsection[3].addEventListener("dblclick",()=>{
+            jsection[3].classList.remove("first","second");
+        });
+
+        jsection[4].addEventListener("click",()=>{
+            jsection[4].classList.toggle("box");
+
+        })
+
+
+        jsection[5].addEventListener("click",()=>{
+            document.querySelector("body").classList.toggle('theams');
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

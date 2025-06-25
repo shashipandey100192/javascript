@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .first{
+        color:blue;
+        padding:10px;
+        background-color: aqua;
+    }
+</style>
+
+<script>
+    function first()
+    {
+        alert("welcome to internal js link");
+        second();
+    }
+    function second()
+    {
+        alert("this is second function");
+        third();
+    }
+
+    function third()
+    {
+        alert("this is third function");
+    }
+    
+function one()
+{
+    alert("welcome"); console.log("use of js")
+
+}
+
+
+</script>
+
+
+
+</head>
+<body>
+
+<h1 style="color:red">this is inline</h1>  
+<h2 onclick="this.style.color='red'" onmouseout="this.style.backgroundColor='blue'" onmouseover="this.style.backgroundColor='orange'">this is inline js</h2>
+    
+<!-- <h3 class="first second third" onclick="first(),second(),third()">this is internal css</h3> -->
+ <h3 class="first second third" onclick="first()">this is internal css</h3>
+
+<input type="button" value="submit" onclick="one()">
+
+<input type="button" value="externaljslink" onclick="two()">
+<script src="script.js"></script>
+
+</body>
+</html>

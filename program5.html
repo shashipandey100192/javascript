@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="username"><br><br>
+    <input type="password" placeholder="password"><br><br>
+    <input type="button" value="submit" disabled>
+
+
+
+    <script>
+        var myinput = document.querySelectorAll('input');
+
+        var user, pass;
+        myinput[0].addEventListener("input", () => {
+            user = myinput[0].value;
+            console.log(user);
+            console.log(pass);
+            validationinput();
+            // if (user.value == "" || pass.value == "") {
+            //     myinput[2].setAttribute("disabled", "disabled");
+            // }
+            // else {
+            //     myinput[2].removeAttribute("disabled");
+            // }
+        });
+
+        myinput[1].addEventListener("input", () => {
+            pass = myinput[1].value;
+            console.log(pass);
+            console.log(user);
+            validationinput();
+            //  if (user.value == "" || pass.value == "") {
+            //     myinput[2].setAttribute("disabled", "disabled");
+            // }
+            // else {
+            //     myinput[2].removeAttribute("disabled");
+            // }
+        });
+
+
+        function validationinput()
+        {
+            if (user.length == 0 || pass.length == 0) {
+                myinput[2].setAttribute("disabled", "disabled");
+            }
+            else {
+                myinput[2].removeAttribute("disabled");
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

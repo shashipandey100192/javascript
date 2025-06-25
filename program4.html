@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>this is text1</li>
+    <li>this is text2</li>
+    <li>this is text3</li>
+    <li>this is text4</li>
+    <li>this is text5</li>
+    <li>this is text6</li>
+    <li>this is text7</li>
+    <li>this is text8</li>
+    <li>this is text9</li>
+    <li>this is text10</li>
+</ul>
+<img src="https://thumbs.dreamstime.com/b/spring-wallpaper-creating-award-winning-photograph-pic-encapsulates-timeless-beauty-tranquility-nature-351383535.jpg" width="100">
+
+<input type="password" placeholder="password">
+
+<script>
+
+var myele = document.querySelectorAll("ul,img,input");
+console.log(myele);
+myele[1].addEventListener("click",()=>{
+    myele[1].setAttribute("width",400);
+    myele[1].setAttribute("title","this is profile pic");
+    myele[0].setAttribute("type","none");
+});
+
+myele[0].addEventListener("click",()=>{
+    myele[1].removeAttribute("src");
+});
+
+myele[2].addEventListener("click",()=>{
+    var b = myele[2].getAttribute('type');
+        if(b=="password")
+        {
+            myele[2].setAttribute("type","text");
+        }
+        else
+        {
+            myele[2].setAttribute("type","password");
+        }
+})
+
+
+
+</script>
+    
+</body>
+</html>
