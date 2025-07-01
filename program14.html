@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul
+        {
+            list-style-type: none;
+        }
+        ul li
+        {
+            width:150px;
+            height: 50px;
+            text-align: center;
+            /* float:left; */
+            display: inline-block;
+            margin-left: 5px;
+            line-height: 50px;
+        }
+        ul a
+        {
+            width:100%;
+            height: 50px;
+            float:left;
+            background-color: orange;
+            color:white;
+            text-decoration: none;
+
+        }
+        .bg
+        {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <ul></ul>
+    
+<script>
+
+    // var a = [];
+    // var a = [10,80,90,70,40,50,"kumar",true,{},[]];
+    // var a =[[10,{},[],true],[10,{},{}],["kumar",50,40],[10,5,40,50]];
+    // var a = [{name:"kumar",age:20,working:true},{name:"rohit",age:40},{}];
+
+    // var a = new Array();
+    //     a[10]="kumar";
+    //     a[5]=[10,20,50,40,60];
+    //     a[15]={name:"ravi",age:20,phone:"545154"};
+
+
+        var a = ["home","about","contact","server","other","forms","mern","nodejs"];
+
+
+    console.log(a);
+    console.log(typeof(a));
+
+
+    // function dynnavbar()
+    // {
+    //     var jnav = document.querySelector('ul');
+    //     var mynav = a.map((m)=>{
+    //         return `<li><a href="${m}.html">${m}</a></li>`
+    //     });
+    //     console.log(mynav);
+    //     jnav.innerHTML=mynav.join("");
+    // }
+    // dynnavbar();
+
+
+
+    
+    function dynnavbar()
+    {
+        var jnav = document.querySelector('ul');
+        var mynav = a.map((m)=>{
+           if(m=="mern")
+           {
+             return `<li><a href="program8.html" class="bg">${m}</a></li>`
+           }
+           else
+           {
+             return `<li><a href="${m}.html">${m}</a></li>`
+           }
+        });
+        console.log(mynav);
+        jnav.innerHTML=mynav.join("");
+    }
+    dynnavbar();
+
+
+
+</script>
+
+
+</body>
+</html>

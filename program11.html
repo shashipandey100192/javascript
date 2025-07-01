@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #two
+{
+    width:200px;
+    height: 50px;
+    border:1px solid red;
+    background-color: red;
+}
+
+    </style>
+</head>
+<body>
+
+<input type="range" min="0" max="100" id="one"><span></span>
+
+<div id="two"></div>
+
+
+<script>
+    var a = document.getElementById('one');
+    var b = document.getElementById('two');
+    var allspan = document.querySelectorAll('span');
+    
+    a.addEventListener("input",()=>{
+        b.style.width=`${a.value}%`;
+        console.log(a.value);
+        // allspan[0].innerHTML=a.value+"%";
+        allspan[0].innerHTML=`${a.value}%`;
+        b.style.opacity=`${a.value/100}`;
+    });
+
+// var text = `skld fjk
+//  sdhfjkshdf
+//  jkhsdjkfhjksdfh 
+// jksdhfjkshfjkhsjkfdh`;
+var name = "kumar";
+// var text = "this is text"+name;
+var text = `this is text ${name}`;
+console.log(text);
+
+
+
+</script>
+</body>
+</html>

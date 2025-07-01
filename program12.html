@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 500px;
+            background-color: aquamarine;
+            margin-top: 5px;
+        }
+
+        section {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(3, 44, 66);
+            color: white;
+            position: fixed;
+            left: -500px;
+            top: 200px;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body onscroll="scrollpo()">
+
+
+    <div>box1</div>
+    <div>box2</div>
+    <div>box3</div>
+    <div>box4</div>
+    <div>box5</div>
+    <div>box6</div>
+    <section>
+
+    </section>
+    <div>box7</div>
+    <div>box8</div>
+    <div>box9</div>
+    <div>box10</div>
+
+    <script>
+
+        function scrollpo() {
+            var mysection = document.querySelectorAll('section');
+            let a = window.scrollY;
+            console.log(a);
+            if (a >= 3000) {
+                mysection[0].style.left = "0";
+            }
+            else
+            {
+                mysection[0].removeAttribute("style");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
