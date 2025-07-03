@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin:0 auto;
+            padding:0;
+        }
+        .cards
+        {
+            width:1200px;
+            height: auto;
+            border:1px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cards section
+        {
+            width:250px;
+            height: auto;
+            padding:10px;
+            border:1px solid red;
+            margin:10px;
+        }
+        input[type="search"]
+      {
+        padding:10px;
+        margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="search" placeholder="search by subject" id="searchinput">
+    <div class="cards"></div>
+
+
+<script>
+    var users = [
+        {
+            name:"mohan",
+            age:20,
+            phone:"5487545",
+            subject:"mern",
+            address:["address1","address2"]
+        },
+        {
+            name:"ravi",
+            age:20,
+            phone:"5487545",
+            subject:"mean",
+            address:["address1","address2"]
+        },
+        {
+            name:"pankaj",
+            age:20,
+            phone:"5487545",
+            subject:"mean",
+            address:["address1","address2"]
+        },
+        {
+            name:"suraj",
+            age:20,
+            phone:"5487545",
+            subject:"java",
+            address:["address1","address2"]
+        }
+    ];
+
+    function mapdata()
+    {
+        var jcard = document.querySelector('.cards');
+        var temp = users.map((d)=>{
+            return `<section>
+            <h1>Name: ${d.name}</h1>
+            <h4>Age: ${d.age}</h4>
+            <h5>Phone No: ${d.phone}</h5>
+            <h3>Subject: ${d.subject}</h3>
+            <p>Address: ${d.address[0]}</p>
+        </section>`;
+        });
+
+        jcard.innerHTML = temp.join("");
+
+        var mysearch = document.getElementById('searchinput');
+            mysearch.addEventListener("input",()=>{
+                var a=mysearch.value;
+                // console.log(a);
+                var searchre = users.filter((f)=>{
+                    return f.subject==a
+                });
+                console.log(searchre);
+                jcard.innerHTML ="";
+
+                var temp1 = searchre.map((d)=>{
+            return `<section>
+            <h1>Name: ${d.name}</h1>
+            <h4>Age: ${d.age}</h4>
+            <h5>Phone No: ${d.phone}</h5>
+            <h3>Subject: ${d.subject}</h3>
+            <p>Address: ${d.address[0]}</p>
+        </section>`;
+        });
+        jcard.innerHTML =temp1.join("");
+            })
+
+    }
+mapdata();
+
+
+
+
+</script>
+
+    
+</body>
+</html>

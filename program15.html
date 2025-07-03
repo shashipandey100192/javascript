@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            /* float:left; */
+            display: inline-block;
+            margin-left: 5px;
+            line-height: 50px;
+        }
+
+        ul a {
+            width: 100%;
+            height: 50px;
+            float: left;
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .bg {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" placeholder="enter nav name" id="addnav">
+    <span></span>
+    <input type="button" value="add item" onclick="menuadd()" id="addbtn">
+    <input type="button" value="remove item" onclick="removenav()">
+
+
+
+    <ul></ul>
+
+
+
+    <script>
+        var jspan = document.querySelectorAll("span");
+        var a = ["about", "contact", "server", "other", "forms", "mern", "nodejs"];
+
+        function dynnavbar() {
+            var jnav = document.querySelector('ul');
+            var mynav = a.map((m) => {
+                if (m == "mern" || m == "course") {
+                    return `<li><a href="program8.html" class="bg">${m}</a></li>`
+                }
+                else {
+                    return `<li><a href="${m}.html">${m}</a></li>`
+                }
+            });
+            console.log(mynav);
+            jnav.innerHTML = mynav.join("");
+            jspan[0].innerHTML = `Total Menu: ${a.length}`;
+        }
+        dynnavbar();
+
+        var jaddbtn;
+        function menuadd() {
+            const jmenu = document.getElementById('addnav');
+            jaddbtn = document.getElementById('addbtn');
+            // a.push(jmenu.value);
+            a.unshift(jmenu.value);
+            dynnavbar();
+            btnactive();
+        }
+
+        function removenav() {
+            a.shift();
+            dynnavbar();
+            btnactive();
+        }
+
+        function btnactive() {
+            if (a.length >= 10) {
+                jaddbtn.setAttribute("disabled", "disabled");
+            } else {
+                jaddbtn.removeAttribute("disabled");
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
