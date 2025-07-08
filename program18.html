@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin:0 auto;
+            padding:0;
+        }
+        #abc
+        {
+            width: 1200px;
+            border:1px solid red;
+            padding:10px;
+            font-size: 25px;
+            line-height: 36px;
+        }
+    </style>
+</head>
+<body>
+<textarea id="abc" rows="10">
+The World Wide Web, often called the Web or WWW, is a system of interconnected public webpages accessible through the internet. It's a vast network of information, allowing users to share and find information easily using links that connect different pages. While the Web relies on the internet for access, it is distinct from the internet itself, representing one of many applications built on top of it. 
+The World Wide Web, often called the Web or WWW, is a system of interconnected public webpages accessible through the internet. It's a vast network of information, allowing users to share and find information easily using links that connect different pages. While the Web relies on the internet for access, it is distinct from the internet itself, representing one of many applications built on top of it. 
+</textarea><br>
+<input type="search" id="searchtext">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+<script>
+    // var mytext ="this is my text";
+    // console.log(typeof(mytext));
+    var jspan = document.querySelectorAll('span');
+    var gettext = document.getElementById('abc');
+    var mytext1=new String(gettext.value);
+   
+
+    gettext.addEventListener("input",()=>{
+         mytext1=new String(gettext.value);
+        jspan[0].innerHTML=`Char Length:${mytext1.length}`;
+        var wordcount = mytext1.split(" ");
+        jspan[1].innerHTML=`Count Words:${wordcount.length}`;
+
+    });
+
+    var jsearch = document.getElementById('searchtext');
+        jsearch.addEventListener("input",()=>{
+            var searchvalue = jsearch.value;
+            var searchre = mytext1.match(searchvalue);
+            console.log(searchre);
+            jspan[2].innerHTML=`start Index:${searchre[0]}`;
+        })
+
+    
+
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>
