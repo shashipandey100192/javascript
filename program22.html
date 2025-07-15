@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            background-color: orange;
+            color: white;
+        }
+
+        .second {
+            background-color: aqua;
+            color: red;
+            text-transform: uppercase;
+        }
+
+        .third {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body onresize="abc()">
+
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+
+    <script>
+        function abc() {
+            var jbody = document.querySelector('body');
+            var myele = document.querySelectorAll('h3');
+            var a = screen;
+            var mytype = a.orientation.type;
+            console.log(mytype);
+            myele[0].innerHTML = `${a.width}`;
+
+            if (a.width>= 1200) {
+                jbody.className = "first";
+            }
+            else if (a.width>= 800) {
+                jbody.className = "second";
+            }
+            else if (a.width >= 500) {
+                jbody.className = "third";
+            }
+            else
+            {
+                jbody.removeAttribute("class");
+            }
+
+            if(!mytype=="landscape-primary")
+            {
+                alert("can't run");
+            }
+        }
+
+        abc();
+
+
+function mylocation()
+{
+    navigator.geolocation.getCurrentPosition((a)=>{
+        console.log(a); 
+    })
+
+}
+
+mylocation();
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
