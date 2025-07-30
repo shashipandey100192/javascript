@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one
+        {
+            width:500px;
+            height: 300px;
+            border:1px solid red;
+            background-color: blueviolet;
+            color:white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="one">  use of jquery </div>
+    <input type="button" value="submit">
+    <button type="button">submit1</button>
+    <p>toggle action</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+    $("input").click(function(){
+
+        // $("#one").hide("slow");
+        $("#one").hide(8000);
+        // $(this).hide();
+    });
+
+    $("button").click(function(){
+        $("#one").show(700);
+    });
+
+    $("p").click(function(){
+        $("#one").toggle(3000);
+        $(this).css({color:"red"});
+    });
+
+    $("#one").click(function(){
+        $(this).animate({marginLeft:200},8000,function(){
+            $(this).animate({marginLeft:0},500)
+        })
+    })
+
+
+
+
+
+
+})
+
+
+
+</script>
+</body>
+</html>
